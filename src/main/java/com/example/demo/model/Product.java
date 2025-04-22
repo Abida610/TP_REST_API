@@ -1,4 +1,4 @@
-package com.example.demo;
+package com.example.demo.model;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,4 +36,16 @@ public class Product {
     public void setPrice(double price) {
         this.price = price;
     }
+
+ /*    public Product(String name, double price) {
+
+        this.name = name;
+        this.price = price;
+    }
+
+    public Product( long id, String name,double price) {
+        this.price = price;
+        this.name = name;
+        this.id = id;
+    }*/
 }

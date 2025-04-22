@@ -1,6 +1,6 @@
-package com.example.demo;
+package com.example.demo.service;
 
-import org.springframework.stereotype.Repository;
+import com.example.demo.model.Product;
 import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
@@ -10,19 +10,19 @@ import java.util.Map;
 
 @Service
 public class ProductReactiveService {
-    public static Map<Long,Product> produits=new HashMap<>();
-    Mono<Product> save(Product produit){
+    public static Map<Long, Product> produits=new HashMap<>();
+    public Mono<Product> save(Product produit){
         produits.put(produit.getId(),produit);
         return Mono.justOrEmpty(produit);
     }
-    Mono<Product> findById(Long id){
+    public Mono<Product> findById(Long id){
         return Mono.justOrEmpty(produits.get(id));
     }
-    Flux<Product> findAll(){
+    public Flux<Product> findAll(){
         return Flux.fromIterable(produits.values());
 
     }
-    Mono<Product> delete(Long id){
+    public Mono<Product> delete(Long id){
         Mono.justOrEmpty(produits.remove(id));
         return null;
     }
