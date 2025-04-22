@@ -37,15 +37,5 @@ public class Product {
         this.price = price;
     }
 
- /*    public Product(String name, double price) {
 
-        this.name = name;
-        this.price = price;
-    }
-
-    public Product( long id, String name,double price) {
-        this.price = price;
-        this.name = name;
-        this.id = id;
-    }*/
 }
