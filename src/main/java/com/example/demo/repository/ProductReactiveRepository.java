@@ -1,4 +1,4 @@
-package com.example.demo.service;
+package com.example.demo.repository;
 
 import com.example.demo.model.Product;
 import org.springframework.stereotype.Repository;
@@ -9,7 +9,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 @Repository
-public class ProductReactiveService {
+public class ProductReactiveRepository {
     public static Map<Long, Product> produits=new HashMap<>();
     public Mono<Product> save(Product produit){
         produits.put(produit.getId(),produit);

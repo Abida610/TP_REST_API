@@ -1,6 +1,6 @@
 package com.example.demo.controller;
 
-import com.example.demo.service.ProductReactiveService;
+import com.example.demo.repository.ProductReactiveRepository;
 import com.example.demo.model.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -10,7 +10,7 @@ import reactor.core.publisher.Mono;
 @RestController
 public class ProductReactiveController {
     @Autowired
-    ProductReactiveService service;
+    ProductReactiveRepository service;
     @RequestMapping(value="/api/products",method=RequestMethod.POST)
     public Mono<Product> create(@RequestBody Product produit){
         return service.save(produit);
